@@ -4,7 +4,7 @@ import Error from "./pages/Error";
 import SignIn from "./pages/SignIn";
 import Signup from "./pages/Signup";
 import AuthLayout from "./layouts/AuthLayout";
-import MainLayout from "./layouts/MainLayout";
+import Otp from "./pages/Otp";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route element={<AuthLayout />}>
             <Route path="/" element={<Signup />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/confirm" element={<Otp />} />
           </Route>
         </Routes>
       </BrowserRouter>

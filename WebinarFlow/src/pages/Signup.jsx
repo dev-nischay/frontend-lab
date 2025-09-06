@@ -1,12 +1,22 @@
 import { useState } from "react";
 import Button from "../components/Button";
+import { saveDob } from "../store/authStore";
+import { useNavigate } from "react-router-dom";
 export default () => {
   const [input, setInput] = useState("");
+  let nav = useNavigate();
+
+  const handleChange = () => {
+    saveDob({
+      dob: input,
+    });
+    nav("/signin");
+  };
 
   return (
-    <div className="flex flex-col justify-center gap-6 items-center">
+    <div className="flex flex-col justify-center gap-6 items-center text-center">
       <div className="text-2xl">
-        <span className="text-cyan-400 font-[300] font-sans">Webinar</span>
+        <span className="text-cyan-400 font-[300] font-sans ">Webinar</span>
         .gg
       </div>
       <div className="font-medium text-xl">Verify Your Age</div>
@@ -20,7 +30,7 @@ export default () => {
         placeholder="Your Birth Year"
         onChange={(e) => setInput(e.target.value)}
       />
-      <Button>continue</Button>
+      <Button onClick={handleChange}>continue</Button>
     </div>
   );
 };
