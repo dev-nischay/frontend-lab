@@ -1,16 +1,8 @@
 import { useState } from "react";
 import Button from "../components/Button";
-
+import OtpBox from "../components/Otp-box";
+import { useRef } from "react";
 export default () => {
-  const [otp, setOtp] = useState({
-    num1: "",
-    num2: "",
-    num3: "",
-    num4: "",
-    num5: "",
-    num6: "",
-  });
-
   const handleChange = (e) => {
     let { name, value } = e.target;
 
@@ -18,6 +10,14 @@ export default () => {
       return { ...prev, [name]: value };
     });
   };
+  const [show, setShow] = useState(false);
+
+  let ref1 = useRef();
+  let ref2 = useRef();
+  let ref3 = useRef();
+  let ref4 = useRef();
+  let ref5 = useRef();
+  let ref6 = useRef();
 
   return (
     <>
@@ -32,52 +32,16 @@ export default () => {
           nischay@gmail.com
         </div>
         <div className="flex">
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num1}
-            onChange={handleChange}
-            name="num1"
-          />
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num2}
-            onChange={handleChange}
-            name="num2"
-          />
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num3}
-            onChange={handleChange}
-            name="num3"
-          />
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num4}
-            onChange={handleChange}
-            name="num4"
-          />
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num5}
-            onChange={handleChange}
-            name="num5"
-          />
-
-          <input
-            type="text"
-            className="w-8 h-10 border border-gray-500 bg-[#18406b] m-3 rounded-lg"
-            value={otp.num6}
-            onChange={handleChange}
-            name="num6"
-          />
+          <OtpBox reference={ref1} isDone={() => ref2.current.focus()} />
+          <OtpBox reference={ref2} isDone={() => ref3.current.focus()} />
+          <OtpBox reference={ref3} isDone={() => ref4.current.focus()} />
+          <OtpBox reference={ref4} isDone={() => ref5.current.focus()} />
+          <OtpBox reference={ref5} isDone={() => ref6.current.focus()} />
+          <OtpBox reference={ref6} isDone={() => setShow(true)} />
         </div>
 
         <Button>Verify</Button>
+        {show && <Button>Submit</Button>}
         <div className="text-xs text-gray-400 mt-10 text-center">
           Can't find the email?Click here to resend
         </div>
