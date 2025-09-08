@@ -32,12 +32,60 @@ export default () => {
           nischay@gmail.com
         </div>
         <div className="flex">
-          <OtpBox reference={ref1} isDone={() => ref2.current.focus()} />
-          <OtpBox reference={ref2} isDone={() => ref3.current.focus()} />
-          <OtpBox reference={ref3} isDone={() => ref4.current.focus()} />
-          <OtpBox reference={ref4} isDone={() => ref5.current.focus()} />
-          <OtpBox reference={ref5} isDone={() => ref6.current.focus()} />
-          <OtpBox reference={ref6} isDone={() => setShow(true)} />
+          <OtpBox
+            reference={ref1}
+            isDone={() => {
+              ref2.current.focus();
+            }}
+            prev={() => {
+              alert("Otp required");
+            }}
+          />
+          <OtpBox
+            reference={ref2}
+            isDone={() => {
+              ref3.current.focus();
+            }}
+            prev={() => {
+              ref1.current.focus();
+            }}
+          />
+          <OtpBox
+            reference={ref3}
+            isDone={() => {
+              ref4.current.focus();
+            }}
+            prev={() => {
+              ref2.current.focus();
+            }}
+          />
+          <OtpBox
+            reference={ref4}
+            isDone={() => {
+              ref5.current.focus();
+            }}
+            prev={() => {
+              ref3.current.focus();
+            }}
+          />
+          <OtpBox
+            reference={ref5}
+            isDone={() => {
+              ref6.current.focus();
+            }}
+            prev={() => {
+              ref4.current.focus();
+            }}
+          />
+          <OtpBox
+            reference={ref6}
+            isDone={() => {
+              setShow(true);
+            }}
+            prev={() => {
+              ref5.current.focus();
+            }}
+          />
         </div>
 
         <Button>Verify</Button>
