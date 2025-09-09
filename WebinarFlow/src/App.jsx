@@ -5,16 +5,20 @@ import SignIn from "./pages/SignIn";
 import Signup from "./pages/Signup";
 import AuthLayout from "./layouts/AuthLayout";
 import Otp from "./pages/Otp";
-
+import Dashboard from "./pages/Dashboard";
+import MainLayout from "./layouts/MainLayout";
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<AuthLayout />}>
-            <Route path="/" element={<Signup />} />
+          <Route path="/" element={<AuthLayout />}>
+            <Route index element={<Signup />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/confirm" element={<Otp />} />
+          </Route>
+          <Route path="/dash" element={<MainLayout />}>
+            <Route index element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>

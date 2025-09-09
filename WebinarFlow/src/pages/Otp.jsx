@@ -2,16 +2,10 @@ import { useState } from "react";
 import Button from "../components/Button";
 import OtpBox from "../components/Otp-box";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 export default () => {
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-
-    setOtp((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
   const [show, setShow] = useState(false);
-
+  let nav = useNavigate();
   let ref1 = useRef();
   let ref2 = useRef();
   let ref3 = useRef();
@@ -89,7 +83,7 @@ export default () => {
         </div>
 
         <Button>Verify</Button>
-        {show && <Button>Submit</Button>}
+        {show && <Button onClick={() => nav("/dash")}>Submit</Button>}
         <div className="text-xs text-gray-400 mt-10 text-center">
           Can't find the email?Click here to resend
         </div>
