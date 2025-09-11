@@ -31,12 +31,12 @@ let icons = [
 export const Footer = ({ className = "" }) => {
   return (
     <div
-      className={`max-w-full h-auto fixed  bottom-0   inset-x-0 bg-slate-100  flex p-5 justify-around lg:inset-y-0 lg:left-0 lg:max-w-16 lg:flex-col lg:h-full ${className}`}
+      className={` max-w-full h-auto fixed  bottom-0   inset-x-0 bg-slate-100  flex p-5 justify-around lg:inset-y-0 lg:left-0 lg:max-w-16 lg:flex-col lg:h-full ${className}`}
     >
       {icons.map((e, idx) => (
         <div
           key={idx}
-          className="flex gap-1  items-center text-[0.840rem] p-2 px-3 rounded hover: hover:bg-slate-400 "
+          className=" transition-all duration-300 flex gap-1  items-center text-[0.840rem] p-2 px-3 rounded hover: hover:bg-slate-400 "
         >
           <button className=" transition-all duration-200  p-1  ">
             <img src={e.image} />

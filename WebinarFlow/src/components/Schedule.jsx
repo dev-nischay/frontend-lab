@@ -8,7 +8,7 @@ import videoBlue from "/src/assets/video.png";
 export const Schedule = () => {
   const buttons = [down, left, right];
   return (
-    <div className="min-h-72 w-[90%] mt-2  mx-auto  rounded-lg p-3 shadow-2xl bg-slate-200 sm:max-w-[70%]  lg:bg-slate-200  ">
+    <div className=" transition-all duration-300 min-h-72 w-[90%] mt-2   rounded-lg p-3 shadow-2xl bg-slate-200  flex-1  lg:max-w-xl sm:w-[38rem] lg:p-5 ">
       <div className="w-full flex p-2  gap-1 items-center bg-gray-300 mb-5  ">
         <img src={calender} alt="calender-icon" width={25} />
         <div>Monday, 14 October 2024</div>
@@ -27,7 +27,7 @@ export const Schedule = () => {
 
 const WebinarSlots = ({ state }) => {
   return (
-    <div className="flex border-black p-1  relative my-5 ">
+    <div className=" duration-300 flex border-black p-1  relative my-5 ">
       <div className="flex flex-col gap-2 mr-3">
         <div>11:30 AM</div>
         <div className="text-xs text-gray-400">11:30 AM</div>
