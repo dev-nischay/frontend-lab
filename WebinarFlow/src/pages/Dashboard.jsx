@@ -1,24 +1,23 @@
 import { useState } from "react";
-
-import Button from "../components/Button";
-import credit from "/src/assets/credit-card.svg";
-import file from "/src/assets/file-user.svg";
-import house from "/src/assets/house.svg";
-import settings from "/src/assets/settings.svg";
-import users from "/src/assets/users.svg";
+import { Footer, Sidebar } from "../components/Navigation";
+import { Schedule } from "../components/Schedule";
+import { Header } from "../components/Header";
+import { Toolbox } from "../components/Toolbox";
+import { Card } from "../components/Card";
 
 export default () => {
-  let icons = [credit, file, house, settings, users];
   return (
     <>
-      <div className="h-screen  bg-gradient-to-tr from-slate-800 via-blue-950 to-slate-500">
-        <div className="max-w-full h-auto fixed  bottom-0 inset-x-0 bg-slate-200 flex p-5 justify-between ">
-          {icons.map((e) => (
-            <button className=" transition-all gap-10 p-2 rounded hover:bg-slate-400 ">
-              <img src={e} />
-            </button>
-          ))}
+      <div className="w-full min-h-screen bg-gradient-to-tr from-slate-800 via-blue-950 to-slate-500 pb-5">
+        <Header />
+        <div className=" flex-col h-full  lg:p-10 lg:gap-8 lg:flex-row flex justify-evenly gap-1 items-center md:gap-6 ">
+          {/* {see lg:p-10 when you are free} */}
+          <Card className="hidden" />
+          <Schedule />
+          <Toolbox />
         </div>
+        <Sidebar />
+        <Footer className="lg:hidden" />
       </div>
     </>
   );
