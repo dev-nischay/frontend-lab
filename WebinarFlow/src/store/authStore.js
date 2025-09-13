@@ -3,8 +3,8 @@ export const authStore = create((set) => ({
   credentials: {},
   saveDob: (dob) =>
     set((state) => ({ credentials: { ...state.credentials, ...dob } })),
-  saveEmail: (email) =>
-    set((state) => ({ credentials: { ...state.credentials, ...email } })),
+  saveDetails: (details) =>
+    set((state) => ({ credentials: { ...state.credentials, ...details } })),
 }));
 
-export const { credentials, saveDob, saveEmail } = authStore.getState();
+export const { credentials, saveDob, saveDetails } = authStore.getState();

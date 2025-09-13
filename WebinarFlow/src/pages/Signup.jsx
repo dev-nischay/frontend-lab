@@ -2,11 +2,15 @@ import { useState } from "react";
 import Button from "../components/Button";
 import { saveDob } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
+import { dobValidate } from "../utils/validation";
 export default () => {
   const [input, setInput] = useState("");
   let nav = useNavigate();
 
   const handleChange = () => {
+    let data = input;
+    let parsed = dobValidate.safeParse({ dob: data });
+    if (!parsed.success) return alert(parsed?.error?.issues[0].message);
     saveDob({
       dob: input,
     });
