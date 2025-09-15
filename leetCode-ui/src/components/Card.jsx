@@ -8,9 +8,18 @@ import {
   PanelRightClose,
   ChevronRight,
 } from "lucide-react";
+import Modal from "./Modal";
 import { Button } from "./Button";
+
 export const Card = () => {
-  const nav = useNavigate();
+  const showModal = () => {
+    return (
+      <div>
+        <Modal />
+      </div>
+    );
+  };
+
   return (
     <div className="w-full  relative min-w-sm h-auto p-6 items-center  rounded-xl mt-6  flex flex-col  gap-2  bg-customGrey-300">
       <button className=" absolute left-4 top-4 bg-customGrey-550 px-[0.35rem]  border border-customGrey-650 rounded-full hover:bg-blue-500 ">
@@ -43,7 +52,9 @@ export const Card = () => {
         </div>
 
         <button
-          onClick={() => nav("/test")}
+          onClick={() => {
+            showModal();
+          }}
           className=" min-w-4 relative -left-[17vw] rounded-lg text-white  bg-customGrey-550 justify-center text-sm transition-colors   h-9 px-4 py-2  flex items-center gap-1 f"
         >
           Progress:<span className="font-[600] text-[1rem]">0</span>Solved
