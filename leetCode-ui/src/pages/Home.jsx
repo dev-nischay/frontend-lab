@@ -6,7 +6,7 @@ export default () => {
   return (
     <>
       <Card />
-      <div className="flex flex-col mt-6 gap-4 pb-28">
+      <div className="flex flex-col mt-6 gap-4 pb-10  lg:flex-1 lg:max-w-[45rem]">
         <FilterandSort />
         <List />
       </div>

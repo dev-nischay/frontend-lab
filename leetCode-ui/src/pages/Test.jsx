@@ -1,7 +1,10 @@
 import { RotateCcw } from "lucide-react";
 import { X } from "lucide-react";
+import { useState } from "react";
 
 export default () => {
+  const [modal, setModal] = useState(false);
+
   const arr = [
     {
       diff: "Easy",
@@ -16,34 +19,59 @@ export default () => {
       solved: "0/1",
     },
   ];
+
   return (
-    <div className="fixed flex inset-x-6 inset-y-0 top-12 items-center">
-      <div className="bg-customGrey-400 gap-4 flex border border-customGrey-700 justify-evenly flex-col h-auto max-h-[80vh] p-4 overflow-y-auto max-w-xl w-full rounded-xl ">
-        <div className="flex justify-between items-center ">
-          <div className="flex gap-2 items-center ">
-            <div className="text-white font-[500] text-[1.100rem] ">
-              <div className="mx-auto text-lg text-white">Progress</div>
+    <>
+      <button
+        onClick={() => setModal((prev) => !prev)}
+        className="bg-neutral-700 w-10 h-10 text-white"
+      >
+        test
+      </button>
+
+      {/* Modal Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 backdrop-brightness-75 flex justify-center items-center transition-opacity  duration-300 z-20 ${
+          modal
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setModal(false)}
+      >
+        {/* Modal Content */}
+        <div
+          className={`relative bg-customGrey-400 rounded-xl p-4 max-w-lg w-full max-h-[80vh] overflow-y-auto transition-transform  ${
+            modal ? "  -translate-y-10 " : "  translate-y-0"
+          }`}
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal content
+        >
+          <div className="flex justify-between items-center mb-4">
+            <div className="flex gap-2 items-center text-white font-medium text-lg">
+              <span>Progress</span>
+              <RotateCcw width={16} color="gray" />
             </div>
-            <div>
-              <RotateCcw width={16} color="gray"></RotateCcw>
+            <button onClick={() => setModal(false)}>
+              <X width={20} color="gray" />
+            </button>
+          </div>
+
+          <div className="flex gap-2">
+            <div className="bg-customGrey-500 flex justify-center text-white rounded-md items-center w-full text-lg">
+              <div className="text-center">
+                <span className="text-4xl">0</span>/7
+                <div>Solved</div>
+              </div>
             </div>
-          </div>
-          <div>
-            <X width={20} color="gray" />
-          </div>
-        </div>
-        <div className="flex gap-2 ">
-          <div className="bg-customGrey-500 rounded-md w-full h-auto text-xl  ">
-            Solved
-          </div>
-          <div className="flex flex-col gap-2">
-            {arr.map((e) => (
-              <LocalCard diff={e.diff} solved={e.solved} />
-            ))}
+
+            <div className="flex flex-col gap-2">
+              {arr.map((e, idx) => (
+                <LocalCard key={idx} diff={e.diff} solved={e.solved} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
