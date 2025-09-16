@@ -14,25 +14,29 @@ export const FilterandSort = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className=" bg-transparent text-white focus:ring-0 text-sm placeholder:text-customGrey-700"
+              className=" bg-transparent text-white outline-none focus:ring-0 text-sm placeholder:text-customGrey-700"
               placeholder={`Search questions`}
             />
           </div>
-
-          <LocalButton Icon={ArrowUpDown} />
-          <LocalButton Icon={Funnel} />
+          <LocalButton Icon={ArrowUpDown} text={"Sort"} />
+          <LocalButton Icon={Funnel} text={"Filter"} />
         </div>
         <div>
-          <LocalButton Icon={Shuffle} className="bg-transparent" />
+          <LocalButton
+            Icon={Shuffle}
+            className="bg-transparent"
+            text={"Pick"}
+          />
         </div>
       </div>
     </>
   );
 };
 
-export const LocalButton = ({ Icon, className = "" }) => {
+export const LocalButton = ({ Icon, className = "", text }) => {
   return (
     <Button
+      text={text}
       className={`h-[1.95rem] w-[1.95rem] bg-customGrey-450 ${className}`}
     >
       <Icon color="rgb(168,168,168)" width={16} />
