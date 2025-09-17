@@ -1,4 +1,5 @@
 import { useSidebar } from "../store/ui";
+import { useEffect } from "react";
 import { toggle } from "../store/ui";
 import {
   LibraryBig,
@@ -6,26 +7,38 @@ import {
   Plus,
   ChevronDown,
   Lock,
+  AlarmCheck,
 } from "lucide-react";
 import star from "/src/assets/leetCode-hero.png";
 
 export const Sidebar = () => {
   const show = useSidebar((state) => state.show);
+
+  const handleChange = () => {
+    alert(window.innerWidth);
+  };
+
   return (
     <>
       <div onClick={() => toggle()}>
         <div>
           <div
-            className={` absolute h-screen  backdrop-brightness-50 z-10 border-transparent border-r-customGrey-650 backdrop-blur-sm inset-y-0 left-0 ${
-              show ? "w-full" : "w-0"
-            } `}
+            className={`xl:opacity-0  fixed  transition-opacity duration-300 bg-transparent backdrop-brightness-50  z-10 border-transparent border-r-customGrey-650 opacity-0 w-screen backdrop-blur-sm inset-y-0 left-0 
+                ${
+                  show
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
+                }
+                `}
           ></div>
           <div
-            className={` absolute transition-transform  duration-300  w-60 border-r-customGrey-500 border-r-[1px] z-20 inset-y-0 left-0 bg-customGrey-200 ${
-              show ? "translate-x-0" : "-translate-x-full"
-            }    lg:min-h-screen    `}
+            className={`fixed transition-transform  duration-300  w-60 border-r-customGrey-500  border-r-[1px] z-20 inset-y-0 left-0 bg-customGrey-200 ${
+              show
+                ? "translate-x-0 pointer-events-auto  "
+                : "-translate-x-full pointer-events-none "
+            }   xl:min-h-screen xl:static    xl:translate-x-0 xl:pointer-events-auto halfXl:fixed  `}
           >
-            <div className="h-[50px]"></div>
+            <div className="  xl:hidden halfXl:block  h-[50px]"></div>
             <div className="flex flex-col gap-1 p-4  h-auto text-lg ">
               <Features Icon={LibraryBig} title={"Library"} />
               <Features Icon={GraduationCap} title={"Study Plan"} />
@@ -35,7 +48,7 @@ export const Sidebar = () => {
                   My Lists
                 </div>
                 <div className="flex  items-center">
-                  <Plus width={18} color="white" />
+                  <Plus onClick={handleChange} width={18} color="white" />
                   <ChevronDown width={14} color="gray" />
                 </div>
               </div>
