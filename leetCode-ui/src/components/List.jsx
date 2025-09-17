@@ -2,7 +2,7 @@ import { Problem } from "./Problems";
 import { questions } from "../utils/questions";
 export const List = () => {
   return (
-    <div className="w-full  h-auto group-even:bg-transparent  ">
+    <div className="  h-auto group-even:bg-transparent lg:flex-1  ">
       {questions.map((e, idx) => (
         <Problem
           key={idx}
