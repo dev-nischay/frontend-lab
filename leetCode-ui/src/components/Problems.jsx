@@ -57,31 +57,3 @@ export const Problem = ({ className = "", rate, ques, diff }) => {
     </div>
   );
 };
-
-// fdfd
-
-//   <div className="bg-customGrey-300 group  px-4 gap-6 text-white text-sm h-[44px] space-x-3 rounded-md items-center flex justify-around w-full ">
-//       <div className="flex items-center justify-start gap-3">
-//         <button className="bg-transparent invisible group-hover:visible">
-//           <Menu color="gray" width={15} />
-//         </button>
-//         <div className="font-[500]">
-//           <span className="px-[1px]">1</span>
-//           <span className="pl-[0.2px] pr-[5px]">.</span>
-//           Two Sum
-//         </div>
-//       </div>
-
-//       <div className="flex gap-3 items-center">
-//         <div className="invisible text-customGrey-700 group-hover:visible  sm:visible  ">
-//           56.3%
-//         </div>
-//         <div className="text-cyan-600">Easy</div>
-//         <ProgressBar />
-//         <div>
-//           <button className="bg-transparent invisible group-hover:visible ">
-//             <EllipsisIcon width={15} color="gray" />
-//           </button>
-//         </div>
-//       </div>
-//     </div>
