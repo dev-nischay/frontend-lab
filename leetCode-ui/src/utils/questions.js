@@ -1,6 +1,6 @@
 export const questions = [
   {
-    ques: "1. Two Sum",
+    ques: "Two Sum",
     difficulty: "Easy",
     completionRate: "56.3%",
   },
@@ -38,5 +38,3 @@ export const questions = [
 ];
 
 // Probem for every element log its positoin
-
-questions.map((e, idx) => idx % 2 !== 0 && console.log("odd"));

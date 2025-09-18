@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
+import { toggle } from "./store/ui";
+import { useEffect } from "react";
 function App() {
   return (
     <>
