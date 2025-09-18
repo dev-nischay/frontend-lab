@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        halfXl: "1400px",
+      },
       colors: {
         customGrey: {
           200: "rgb(26,26,26)",
