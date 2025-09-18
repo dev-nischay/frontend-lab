@@ -16,13 +16,13 @@ import { useState } from "react";
 
 export const Card = () => {
   const show = useSidebar((state) => state.show);
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false); // add this to zustand's ui store
 
   return (
     <div className=" transition-all duration-200 w-full  relative  h-full  p-6 items-center  rounded-xl mt-6  flex flex-col  gap-2  bg-customGrey-300 lg:max-w-[23rem] lg:items-start lg:h-[32rem] lg:mt-16 lg:p-4 xl:mt-6  ">
       <button
         onClick={toggle}
-        className={` transition-all duration-200 left-4 top-4 absolute bg-customGrey-550 px-[0.35rem]  border border-customGrey-650 rounded-full hover:bg-blue-500 lg:-left-0 lg:-top-10 xl:-top-0 xl:-left-10 `}
+        className={` transition-all duration-200 left-4 top-4 absolute bg-customGrey-550 px-[0.35rem]  border border-customGrey-650 rounded-full hover:bg-blue-500 lg:-left-0 lg:-top-10 xl:-top-0 xl:-left-10 halfXl:opacity-0 `}
       >
         <PanelRightClose color="white" width={13} />
       </button>
