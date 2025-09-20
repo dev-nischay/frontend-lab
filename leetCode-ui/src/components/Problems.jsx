@@ -1,4 +1,4 @@
-import { ProgressBar } from "./ProgressBar";
+import { ProgressBar } from "./Matrix";
 import { EllipsisIcon, Menu } from "lucide-react";
 
 export const Problem = ({ className = "", rate, ques, diff }) => {

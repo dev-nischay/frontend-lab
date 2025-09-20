@@ -1,6 +1,7 @@
 import star from "/src/assets/leetCode-hero.png";
 import { useNavigate } from "react-router-dom";
 import { toggle, useSidebar } from "../store/ui";
+import { Progress } from "./Progress";
 import { Modal } from "./Modal";
 import {
   Play,
@@ -62,7 +63,8 @@ export const Card = () => {
         </button>
       </div>
       <div className="bg-customGrey-550 lg:block my-1 hidden h-px w-full mt-2" />
-      <Modal setModal={setModal} modal={modal} />
+      <Modal modal={modal} setModal={setModal} />
+      <Progress />
     </div>
   );
 };
