@@ -3,6 +3,7 @@ import { Button } from "./Button";
 import { Search, ArrowUpDown, Funnel, Shuffle } from "lucide-react";
 import { filteredQues, searchedQues } from "../store/question-bank";
 import { useQuestionStore } from "../store/question-bank";
+import { random } from "../utils/randomizer";
 
 export const FilterandSort = () => {
   let [input, setInput] = useState("");
@@ -38,6 +39,7 @@ export const FilterandSort = () => {
         <div>
           <LocalButton
             Icon={Shuffle}
+            onClick={random}
             className="bg-transparent"
             text={"Pick"}
           />

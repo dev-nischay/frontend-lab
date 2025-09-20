@@ -2,7 +2,7 @@ import star from "/src/assets/leetCode-hero.png";
 import { useNavigate } from "react-router-dom";
 import { toggle, useSidebar } from "../store/ui";
 import { Progress } from "./Progress";
-import { Modal } from "./Modal";
+import { Modal } from "./Modals";
 import {
   Play,
   Plus,
