@@ -23,9 +23,11 @@ export const List = () => {
         <Problem
           key={idx}
           className={`${idx % 2 !== 0 && "bg-transparent"}`}
-          rate={e.completionRate}
           ques={e.ques}
+          rate={e.completionRate}
           diff={e.difficulty}
+          let
+          x
         />
       ))}
     </div>
